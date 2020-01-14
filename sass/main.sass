@@ -1,0 +1,1625 @@
+@import 'components/vars'
+@import 'components/reset'
+@import 'components/hamburgers'
+@import 'components/slick'
+@import 'components/slick-theme'
+@import 'components/magnific-popup'
+
+//Project styles
+html 
+    font-size: 62.5%
+
+body 
+    font-family: $mainFont
+    font-size: $mainFontSize
+    background-color: $mainBG
+    color: $white
+
+.header
+    background-color: $black
+
+    .container
+        display: flex
+        justify-content: space-between
+        padding: 1rem 1.5rem
+
+    &__support
+        display: flex
+        flex-direction: column
+        align-items: center
+        font-size: 1rem
+        font-weight: 500
+
+        &-image
+            display: block
+            width: 15rem
+            height: 3.2rem
+            background-image: url(../../images/logo/triathlone.svg)
+            background-repeat: no-repeat
+            background-size: cover
+            background-position: center
+
+.section
+    height: 100%
+    padding-top: 9rem
+    padding-bottom: 2.6rem
+    background-image: url(../../images/bg.png)
+    background-repeat: no-repeat
+    background-size: cover
+
+.logo
+    display: flex
+    align-items: center
+    font-size: 1.2rem
+    font-weight: 700
+    text-transform: uppercase
+    font-style: italic
+    color: $orange
+
+    &__image
+        width: 6rem
+        height: 4.5rem
+        margin-right: 3.2rem
+        background-image: url(../../images/logo/logo.svg)
+        background-repeat: no-repeat
+        background-size: contain
+        background-position: center
+
+.banner 
+    margin-top: 4rem
+
+    &__slider
+        width: 85.9%
+        margin-left: auto
+        margin-right: auto
+
+    &__image
+        height: 63.4vh
+        border: 1px solid $greyBorder
+        background-color: $imageBg
+
+        img
+            border-radius: 0
+            object-position: bottom
+
+    &__item
+        position: relative
+        box-shadow: 0 20px 45px rgba(0,0,0,.7)
+
+    &__inner
+        position: absolute
+        top: 0
+        left: 0
+        transform: none
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        width: 100%
+        height: 100%
+    
+    &__title
+        text-align: center
+
+        span
+            font-weight: 900
+            font-size: 4.6rem
+            text-transform: uppercase
+
+    &.main-banner &__title
+        text-align: center
+
+        span
+            font-weight: 500
+            font-size: 6.8rem
+            text-transform: uppercase
+
+        strong
+            font-weight: 800
+            font-size: 7.5rem
+        
+        span:last-of-type
+            font-weight: 500
+            font-size: 2.2rem
+            line-height: 3.6rem
+            text-transform: none
+            opacity: 0.5
+
+    &.main-banner
+        .swiper-button-next, .swiper-button-prev
+            top: 46%
+
+    &__date-box
+        margin-top: 7rem
+        text-align: center
+
+        span
+            display: inline-block
+            padding-bottom: 2.5rem
+            font-size: 3.6rem
+            font-weight: 900
+            font-style: italic
+            text-transform: uppercase
+            color: $orange
+
+    &__link
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 33.4rem
+        height: 7.2rem
+        margin: 0 auto
+        font-size: 1.8rem
+        font-weight: 900
+        letter-spacing: 1px
+        color: $black
+        background: $orange
+        background: linear-gradient(to right, #ff8400, #ffa200)
+        text-transform: uppercase
+        transition: 0.12s
+
+        &:hover
+            background-color: $red
+            color: $black
+            transition: 0.12s
+
+.arrow
+    &::after
+        content: ''
+        display: block
+        height: 1.7rem
+        width: 1.5rem
+        margin-left: 0.7rem
+        background-image: url(../../icons/arrow-point-to-right.svg)
+        background-repeat: no-repeat
+
+.swiper-container
+    padding-bottom: 4.5rem
+    
+    .swiper-button-next::after, .swiper-container-rtl .swiper-button-prev::after,
+    .swiper-button-prev::after, .swiper-container-rtl .swiper-button-next::after
+        color: $orange
+
+    .swiper-button-next, .swiper-container-rtl .swiper-button-prev
+        right: 2%
+
+    .swiper-button-prev, .swiper-container-rtl .swiper-button-next
+        left: 2%
+
+    .swiper-pagination-bullet
+        width: 3rem
+        height: 2px
+        border-radius: 0
+        background: $orange
+
+    .swiper-pagination
+        bottom: 19px
+
+.menu
+    background-color: $red
+
+    #menu
+        padding: 1.8rem 3.8rem
+
+    .navbar-light .navbar-nav .nav-link
+        font-size: 1.4rem
+        font-weight: 700
+        font-style: italic
+        color: $white
+        text-transform: uppercase
+        letter-spacing: 0.7px
+
+        &:hover
+            color: #650006
+            transition: 0.12s
+
+    .navbar-expand-lg .navbar-nav
+        width: 100%
+        justify-content: space-between
+
+    .navbar-light .navbar-nav .active > .nav-link
+        color: $black
+
+.hamburger
+    display: flex
+    padding: 0.8rem 1.8rem
+
+    &:hover, &.is-active:hover
+        opacity: 1
+
+    &.navbar-toggler
+        background: linear-gradient(to top right, $red, #5469a4)
+
+.section-title
+    text-align: center
+    text-transform: uppercase
+    color: $red
+
+.news
+
+    &__list
+        max-width: 70.2%
+        margin: 0 auto
+        margin-top: 9rem
+        
+        &-item
+            padding: 1.5rem
+            background-color: $grey
+            border-radius: 1rem
+            box-shadow: 0 0 50px rgba(0,0,0,.7)
+            transition: 0.12s
+
+            &:not(:first-of-type)
+                margin-top: 2.7rem
+
+            &:hover .news__item
+                box-shadow: 0 0 50px rgba(220,31,43,.9)
+                transition: 0.12s
+        
+    &__item
+        display: flex
+
+        &-text
+            width: 38.5%
+            padding: 5.5rem 5.5rem 4.5rem 5.5rem
+            background-color: $white
+            color: $black
+            border-top-left-radius: 1rem
+            border-bottom-left-radius: 1rem
+
+        &-title
+            font-size: 2rem
+            line-height: 2.5rem
+            font-weight: 800
+            text-transform: uppercase
+
+            small
+                font-size: 1.4rem
+                font-weight: 800
+
+        &-date
+            display: inline-block
+            margin-top: 2.5rem
+            padding: 0 1rem
+            font-size: 1rem
+            font-weight: 700
+            background-color: $orange
+
+        &-image
+            width: 66.5%
+            border-top-right-radius: 1rem
+            border-bottom-right-radius: 1rem
+
+            img
+                border-radius: 0
+                border-top-right-radius: 1rem
+                border-bottom-right-radius: 1rem
+
+        .banner__link
+            width: 13.2rem
+            height: 3.6rem
+            margin: 0
+            margin-top: 3rem
+            font-size: 1rem
+
+
+    &__text-box
+        font-size: 1.4rem
+        font-weight: 500
+        padding-top: 2.5rem
+        color: $greyText
+
+.page-banner
+    margin-top: 0
+    padding-bottom: 0
+
+    .banner
+        &__slider
+            width: 100%
+            box-shadow: 0 0 0
+
+        &__slogan
+            width: 60%
+            font-size: 2.2rem
+            font-weight: 400
+            text-align: center
+
+        &__title
+            width: 60%
+            margin-bottom: 5.5%
+            font-weight: 900
+            font-size: 4.6rem
+            text-transform: uppercase
+
+
+        &__text
+            display: flex
+            justify-content: space-between
+            width: 81%
+            font-size: 2.4rem
+            font-weight: 800
+            font-style: italic
+            color: $orange
+            text-align: center
+            text-transform: uppercase
+
+        &__image
+            height: 72.4vh
+            max-height: 70rem
+            border: 0
+            
+.event
+    &__list
+        display: flex
+        flex-direction: column
+
+        &-item
+            display: flex
+            align-items: center
+
+            &:not(:first-of-type)
+                padding-top: 5rem
+
+            &:nth-child(even)
+                flex-direction: row-reverse
+
+                .event__item-text
+                    margin-right: -4%
+                    padding-right: 5.5%
+                    padding-left: 3rem
+                    margin-left: 0
+    &__item
+        &-image
+            width: 58.4rem
+            height: 25.7rem
+            background-color: $imageBg
+
+            img
+                border-radius: 0
+        &-text
+            width: 59.4%
+            height: 100%
+            padding: 2.5rem 3rem 2.5rem 5.5%
+            margin-left: -3%
+            font-size: 2.4rem
+            font-weight: 400
+            line-height: 3rem
+            border: 2px solid $red
+    
+    &__main
+        padding-top: 6.3rem
+
+        &-image
+            height: 38vh
+            max-height: 37.2rem
+            background-color: $imageBg
+            
+            img
+                border-radius: 0
+
+        &-text
+            position: relative
+            z-index: 10
+            height: 100%
+            padding: 5% 3rem 5rem 5rem
+            margin-top: -2.1%
+            margin-left: 2.3%
+            margin-right: 2.3%
+            text-align: center
+            font-size: 2.4rem
+            font-weight: 400
+            line-height: 3rem
+            border: 2px solid $red
+            
+            p:not(:first-of-type)
+                padding-top: 2rem
+
+    &-container
+        padding-top: 5.7vh
+        padding-bottom: 5rem
+
+    &-list
+        max-width: 76.2%
+        margin-top: 0
+
+        .news__item-text
+            padding-top: 4.5rem
+
+        .news__item-title
+            line-height: 2rem
+
+        .news__list-item:nth-child(even) .news__item
+            flex-direction: row-reverse
+
+        .news__text-box
+            padding-top: 2.7rem
+            font-size: 1.3rem
+            line-height: 1.85rem
+
+        .news__item .banner__link
+            margin-top: 3.5rem
+            font-size: 0.8rem
+
+        .news__list-item
+            padding: 1rem
+
+        .news__list-item:not(:first-of-type)
+            margin-top: 4rem
+
+.gallery
+    padding-top: 8rem
+    padding-bottom: 6.5rem
+
+    &__item
+        display: flex
+        align-items: flex-start
+        justify-content: space-between
+
+        &-title
+            font-size: 3.8rem
+            font-weight: 800
+            color: $red
+            text-transform: uppercase
+
+        &-text
+            padding-top: 3.8rem
+            padding-bottom: 25%
+            line-height: 2.8rem
+
+        &-image
+            height: 44rem
+            width: 52.8%
+            margin-left: 3%
+            background-color: $imageBg
+
+            img
+                border-radius: 0
+
+    &__inner
+        width: 42%
+        margin-top: 8vh
+        font-size: 2.2rem
+        font-weight: 500
+
+    .swiper-pagination
+        width: 35%
+        bottom: 20%
+        text-align: left
+
+    .swiper-pagination-bullet
+        height: 0.4rem
+        width: 6.2rem
+
+.about
+    padding-bottom: 10rem
+
+    &-banner
+        .banner__title
+            margin-bottom: 1.8%
+
+        .swiper-pagination
+            bottom: 17px
+
+    &-info
+        &__subtitle
+            padding-top: 0.8rem
+            font-size: 2.2rem
+            font-weight: 500
+            text-align: center
+    
+    .about-slider
+        padding-top: 6.5rem
+
+
+    .gallery
+        &__item
+            background-color: $black
+            box-shadow: 0 20px 45px rgba(0,0,0,.7)
+
+            &-title
+                font-size: 1.8rem
+                font-weight: 700
+                line-height: 2.5rem
+                color: $white
+
+            &-text
+                padding-bottom: 0
+                padding-top: 1.5rem
+                font-size: 1.8rem
+                font-weight: 500
+                line-height: 2.3rem
+
+            &-image
+                height: 50rem
+                width: 50.8%
+
+        &__inner
+            width: 46%
+            margin-top: 0
+            padding-top: 6%
+            padding-left: 8.15%
+
+    .swiper-pagination
+        bottom: 19%
+        left: 11.1%
+        width: 35%
+        text-align: left
+
+    .swiper-pagination-bullet
+        height: 0.4rem
+        width: 6.2rem
+
+    &.section
+        padding-top: 4.5rem
+
+    &-team
+        margin-top: 2.2rem
+
+        &__list
+            padding-top: 6.5vh
+
+            &-item
+                position: relative
+                padding: 0 1rem
+                margin-top: 2rem
+                cursor: pointer
+
+        &__image
+            height: 25vh
+
+            img
+                border-radius: 0
+        
+        &__text
+            padding: 4%
+            color: $black
+            background-color: $white
+            transition: 0.12s
+
+        &__name
+            font-size: 1.8rem
+            font-weight: 700
+
+        &__position
+            font-size: 1.6rem
+            font-weight: 500
+
+    &-slider
+        .swiper-pagination
+            bottom: 18%
+
+.members
+
+    &__box
+        padding-top: 5.5rem
+
+        &-title
+            font-size: 2.3rem
+            font-weight: 900
+            line-height: 2.7rem
+            text-transform: uppercase
+
+            strong
+                color: $red
+
+        &-text
+            padding-top: 1.5rem
+            font-size: 1.6rem
+            font-weight: 400
+            line-height: 1.8rem
+
+    &__inner
+        width: 82%
+        margin: 0 auto
+        padding-top: 5.6rem
+
+    &__virtues
+        &-item
+            font-size: 1.8rem
+            font-weight: 400
+            color: $white
+            
+            strong
+                font-size: 3rem
+                font-weight: 800
+                font-style: italic
+
+        &-text
+            height: 100%
+            padding: 1.6rem 4rem
+            padding-bottom: 2.2rem
+            border: 1px solid $red
+
+    &__list
+        display: grid
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr
+        grid-template-rows: 1fr
+        grid-row-gap: 11rem
+        grid-column-gap: 1.5rem
+        width: 87%
+        padding-bottom: 16rem
+        margin: 0 auto
+
+        &-item
+            text-align: center
+
+            // &:nth-of-type(n+6):nth-of-type(-n+9)
+                // flex-basis: 21%
+                // max-width: 21%
+
+            // &:nth-of-type(6n)
+            //     margin-left: 6%
+
+            // &:nth-of-type(9n)
+            //     margin-right: 6%
+
+    &__link
+
+        &-logo
+            height: 5rem
+            padding-bottom: 1rem
+
+            img
+                border-radius: 0
+                object-fit: contain
+
+    &__site
+        text-align: center
+        font-size: 1.4rem
+        font-weight: 700
+        color: $red
+        text-transform: uppercase
+
+    .gallery
+        &__item
+            &-image
+                width: 50.8%
+
+        &__inner
+            padding-top: 3.3%
+            padding-right: 3.2%
+
+    &__partners
+        padding-top: 7.2rem
+
+        .members__inner
+            padding-top: 10rem
+
+        .gallery__item
+            flex-direction: row-reverse
+
+            &-image
+                width: 47.3%
+                margin-left: 0
+                margin-right: 2%
+
+        .gallery__inner
+            padding-left: 1.8%
+            padding-right: 8.65%
+            padding-top: 3.7%
+
+        .form-agree
+            position: absolute
+            bottom: 1.3rem
+            right: 0
+
+.form
+    padding-top: 3.2rem
+
+    &-text
+        padding-bottom: 1.3rem
+        font-size: 1.8rem
+        font-weight: 400
+
+    &-label
+        display: none
+
+    &-input
+        height: 5.4rem
+        font-size: 1.3rem
+
+    &-box
+        position: relative
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-between
+
+    &-group
+        width: 48.3%
+        margin-bottom: 2.3rem
+
+    &-button
+        width: 48%
+        height: 5.5rem
+        margin-right: 0
+
+    &-comment
+        font-size: 1.3rem
+
+    textarea.form-control
+        height: 11.3rem
+
+
+    &-file
+        cursor: pointer
+
+        label
+            display: flex
+            align-items: center
+            font-size: 1.4rem
+            font-weight: 400
+            text-decoration: underline
+            cursor: pointer
+            transition: 0.12s
+
+            &:hover
+                color: $orange
+                transition: 0.12s
+
+            &::before
+                content: ''
+                display: inline-block
+                width: 2.5rem
+                height: 4.5rem
+                margin-right: 1rem
+                background-image: url(../../icons/file.svg)
+                background-repeat: no-repeat
+                background-size: cover
+                background-position: center
+                background-color: transparent
+                cursor: pointer
+
+    &-agree
+        display: block
+        width: 50%
+        margin-left: auto
+        padding-top: 1rem
+        padding-left: 1.3rem
+        font-size: 1.2rem
+        font-weight: 100
+        line-height: 1.6rem
+
+
+    #form-file
+        display: none
+
+.contacts
+    padding-top: 4.4rem
+    text-align: center
+    background: $contactsBlack
+
+    & ~ .menu
+        display: none
+
+    .section-title
+        width: 80%
+        margin: 0 auto
+        font-size: 4.6rem
+        font-weight: 800
+        color: $white
+
+    &__map
+        height: 39.4vh
+
+    &__info
+        width: 25%
+        margin: 0 auto
+        padding: 5.5rem 0
+        padding-bottom: 6.5rem
+
+    &__links
+        display: flex
+        justify-content: space-between
+
+        &-item
+            display: flex
+            align-items: center
+            font-size: 1.8rem
+            font-weight: 700
+            font-style: italic
+            color: $orange
+            text-transform: uppercase
+            transition: 0.12s
+
+            &:hover
+                color: $orange
+                transition: 0.12s
+
+            &.phone
+                &::before
+                    content: ''
+                    display: inline-block
+                    width: 2rem
+                    height: 2rem
+                    background-image: url(../../icons/phone.svg)
+                    background-repeat: no-repeat
+                    background-size: contain
+                    margin-right: 1rem
+
+            &.mail
+                &::before
+                    content: ''
+                    display: inline-block
+                    width: 2rem
+                    height: 2rem
+                    background-image: url(../../icons/envelope.svg)
+                    background-repeat: no-repeat
+                    background-size: contain
+                    margin-right: 1rem
+    
+    &__text
+        padding-top: 6rem
+        font-size: 1.8rem
+        line-height: 2.6rem
+        font-weight: 700
+        font-style: italic
+        text-transform: uppercase
+
+        p:not(:last-of-type)
+            padding-bottom: 1.3rem
+
+.modal
+    color: $black
+
+    &-content
+        box-shadow: 0 20px 45px rgba(0,0,0,.7)
+
+    &-inner
+        width: 100%
+        text-align: center
+
+    &-title
+        font-size: 1.8rem
+        font-weight: 700
+        font-style: italic
+        text-transform: uppercase
+
+    &-dialog
+        max-width: 71rem
+
+    &-header    
+        padding-top: 5rem
+        padding-bottom: 2rem
+        border-bottom: 0
+
+    &-dialog
+        flex-direction: column
+
+    .form
+        padding-top: 0rem
+        max-width: 48rem
+        margin: 0 auto
+        
+        &-box
+            flex-direction: column
+            padding-bottom: 4.5rem
+
+        &-button, &-group
+            width: 100%
+            max-width: 28rem
+            margin-left: auto
+            margin-right: auto
+
+        &-button
+            font-size: 1.4rem
+            margin-bottom: 2.5rem
+
+        &-agree
+            text-align: center
+            width: 100%
+            margin: 0 auto
+            padding-left: 0
+            margin-left: 0
+            padding-bottom: 0
+            padding-top: 0
+
+        &-text
+            text-align: center
+            padding-bottom: 3rem
+            font-size: 1.4rem
+            font-weight: 600
+
+.footer
+    background-color: $footerBlack
+    text-transform: uppercase
+
+    &__logo
+        width: 13.3%
+        padding-left: 0.5rem
+        font-size: 1rem
+        font-weight: 900
+        text-align: center
+        background-color: $red
+        color: $black
+
+        .logo__image
+            height: 10.5rem
+            margin-top: 0.5rem
+            margin-right: 0
+            width: auto
+
+        .header__support-image
+            width: 90%
+            height: 5.5rem
+            margin-right: 0
+
+    &__container
+        display: flex
+
+    &__inner
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        width: 84.2%
+        padding: 3.5rem 5rem 2.5rem 5rem
+
+    &__item
+        display: flex
+        justify-content: space-between
+
+        &:last-child
+            align-items: flex-end
+
+    &__nav
+        justify-content: space-between
+        width: 63%
+
+        .nav-link
+            font-size: 1.8rem
+            font-weight: 700
+            font-style: italic
+            color: $white
+            transition: 0.12s
+
+            &:hover
+                color: $hoverRed
+                transition: 0.12s
+
+        .nav-link.active
+            color: $red
+
+    &__contacts
+        text-align: right
+
+        &_phone
+            display: block
+            font-size: 2.6rem
+            font-weight: 900
+            font-style: italic
+            color: $white
+            transition: 0.12s
+
+            &:hover
+                color: $orange
+                transition: 0.12s
+
+            &::before
+                content: ''
+                display: inline-block
+                width: 2rem
+                height: 2rem
+                background-image: url(../../icons/phone.svg)
+                background-repeat: no-repeat
+                background-size: contain
+                margin-right: 1rem
+
+        &_mail
+            font-size: 1.2rem
+            font-weight: 500
+            font-style: italic
+            color: $white
+            transition: 0.12s
+
+            &:hover
+                color: $orange
+                transition: 0.12s
+
+    &__button
+        text-transform: uppercase
+            
+    &__links
+        width: 40%
+        a
+            display: inline-block
+            padding: 0.7rem 1rem
+            font-size: 1.2rem
+            font-weight: 300
+            color: $white
+            text-decoration: underline
+            transition: 0.12s
+
+            &:hover
+                color: $orange
+                transition: 0.12s
+
+            &:not(:first-of-type)
+                margin-left: 1rem
+
+    &__social
+        display: flex
+
+        &-list
+            display: flex
+            flex-wrap: wrap
+            align-items: center
+            margin-right: 2rem
+
+        &-item
+            a
+                display: inline-block
+                padding: 0.5rem 1rem
+                font-size: 1rem
+                font-weight: 600
+                color: $white
+                transition: 0.12s
+
+                &:hover
+                    color: $orange
+                    transition: 0.12s
+
+    &__button
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 17.5rem
+        height: 4rem
+        font-size: 1rem
+        font-weight: 900
+        background: $orange
+        background: linear-gradient(to right, #ff8400, #ffa200)
+
+        &.arrow::after
+            height: 1.1rem
+            padding-bottom: 1rem
+
+@media screen and (min-width: 1100px)
+    .event-list
+        .news__text-box
+            position: relative
+            max-height: 60%
+            overflow: hidden
+            box-sizing: content-box
+
+            &::after
+               content: ''
+               position: absolute
+               bottom: -1rem
+               left: 0
+               height: 9rem
+               width: 100%
+               background: linear-gradient(rgba(255,255,255,0),#fff)
+
+        .news__item-image
+            max-height: 45.5rem
+
+        .news__item
+            height: 45.5rem
+
+    .about
+        &-team
+            &__list
+                &-item
+                    height: 47.7rem
+
+                    &:hover
+                        .about-team__hover
+                            opacity: 1
+                            transition: 0.12s
+
+                        .about-team__text
+                            bottom: 0
+                            transition: 0.12s
+            &__hover
+                position: absolute
+                top: 0
+                left: 1rem
+                right: 1rem
+                z-index: 20
+                height: 100%
+                background-color: rgba(0%, 0%, 0%, .5)
+                overflow: hidden
+                opacity: 0
+                transition: 0.12s
+
+            &__text
+                position: absolute
+                bottom: -21%
+                width: 100%
+                height: 20.7%
+
+            &__image
+                height: 100%
+
+@media screen and (min-width: 1530px) 
+    .container 
+        max-width: 1390px
+
+    .main-banner .banner__image
+        max-height: 62rem
+
+
+@media screen and (min-width: 1531px) 
+    .container 
+        max-width: 1700px
+
+@media screen and (min-width: 1800px) 
+    .container 
+        max-width: 1737px
+
+    .event-list
+        .news__text-box
+            max-height: 67%
+
+@media screen and (max-width: 1530px) 
+    html 
+        font-size: 56.81%
+
+    .banner__title
+        span
+            font-size: 4.8rem
+        strong
+            font-size: 5.5rem
+        span:last-of-type
+            font-size: 2rem
+
+    .banner__date-box span
+        font-size: 3rem
+
+    .news__list
+        max-width: 75.2%
+
+    .footer__nav
+        justify-content: flex-start
+
+    .footer__links a:not(:first-of-type)
+        margin-left: 0
+
+@media screen and (max-width: 1480px) 
+    .form
+        &-box
+            flex-direction: column
+
+        &-button, &-agree, &-group
+            width: 100%
+
+        &-agree
+            padding-left: 0
+            margin-left: 0
+            padding-bottom: 3rem
+
+    .members .gallery__item-image
+        height: 65rem
+
+    .members__partners .form-agree
+        position: static
+
+    .contacts__info
+        width: 35%
+
+@media screen and (max-width: 1300px) 
+    .news__list
+        max-width: 80.2%
+
+    .banner__title
+        span
+            font-size: 4.4rem
+        strong
+            font-size: 5.1rem
+        span:last-of-type
+            font-size: 1.6rem
+
+    .banner__date-box span
+        font-size: 2.6rem
+
+@media screen and (max-width: 1100px)
+    .banner
+        margin-top: 0
+
+        &__slider
+            width: 100%
+            box-shadow: 0 0 0
+        
+        &__item
+            box-shadow: 0 20px 45px rgba(0,0,0,.7)
+
+        &.main-banner &__title
+            span
+                font-size: 4.8rem
+            strong
+                font-size: 5.5rem
+            span:last-of-type
+                font-size: 2rem
+
+        &__date-box span
+            font-size: 3rem
+
+    .navbar-light .navbar-toggler
+        background-color: $orange
+
+    .section
+        padding-top: 5.3vh
+
+    .news
+
+        &__list
+            margin-top: 6vh
+
+        &__item, .event-list .news__list-item:nth-child(2n) .news__item
+            flex-direction: column
+
+            &-text
+                width: 100%
+                border-bottom-left-radius: 0
+                border-top-right-radius: 1rem
+
+            &-image
+                width: 100%
+                height: 45rem
+                border-top-right-radius: 0
+                border-bottom-right-radius: 1rem
+                
+                img
+                    border-top-right-radius: 0
+
+            &-date
+                font-size: 1.2rem
+
+        &__text-box
+            font-size: 1.6rem
+
+    .gallery
+        &__inner
+            width: 100%
+            margin-top: 3vh
+
+        &__item
+            flex-direction: column
+
+            &-title
+                text-align: center
+
+            &-text
+                padding-bottom: 5rem
+
+            &-image, .gallery__item-image
+                width: 100%
+                margin: 0
+
+        .swiper-pagination
+            width: 100%
+            bottom: 10px
+            text-align: center
+
+    .about
+        
+        .gallery__inner
+            padding-bottom: 5%
+            padding-right: 6.65%
+            width: 100%
+            margin-top: 3vh
+
+        .swiper-pagination
+            width: 100%
+            left: 0
+            bottom: 10px
+            text-align: center
+
+        &-team
+            margin-top: 5rem
+
+        .about-slider
+            padding-bottom: 6.5rem
+
+    .members
+        .members__partners .gallery__item, .gallery__item
+            flex-direction: column
+
+        .gallery__item-image
+            width: 100%
+            height: 40vh
+
+        .gallery__inner
+            padding-left: 0
+            padding-right: 0
+            text-align: center
+
+        .form
+            width: 50%
+            margin: 0 auto
+
+        .form-agree
+            padding-bottom: 0
+
+        .members__virtues-item strong
+            word-break: break-word
+
+        .members__list
+            width: 100%
+
+    .contacts
+        padding-top: 11rem
+
+@media screen and (max-width: 900px) 
+    .menu
+        display: none
+
+    .contacts ~ .menu
+        display: flex
+    
+    #header
+        position: fixed
+        top: 0
+        z-index: 900
+        width: 100%
+
+        .nav-item:first-of-type
+            padding-top: 2rem
+
+        .navbar-light .navbar-nav .nav-link
+            color: $orange
+
+    .logo
+        height: 100%
+        width: 45%
+
+    #menu
+        width: 25%
+
+    .banner
+        margin-top: 7.5rem
+
+    .page-banner
+        .banner
+            &__title, &__slogan
+                width: 80%
+
+    .news__list
+        max-width: 100%
+        
+        &-item
+            &:hover .news__item
+                box-shadow: 0 0 0
+
+    .event-list
+        margin-top: 0
+
+    .footer
+        &__container
+            max-width: 100%
+
+        &__inner
+            padding: 2rem
+
+        &__social
+            flex-direction: column-reverse
+            align-items: flex-end
+            
+            &-list
+                margin-right: 0
+                margin-top: 1rem
+
+        &__nav
+            flex-direction: column
+            width: 60%
+
+    .contacts__info
+        width: 60%
+
+@media screen and (max-width: 700px) 
+    html 
+        font-size: 51%
+
+    .page-banner
+        .banner
+            &__title
+                font-size: 3.6rem
+
+            &__text
+                font-size: 2rem
+
+@media screen and (max-width: 500px) 
+    .banner
+        margin-top: 5.5rem
+
+        .banner__link
+            font-size: 1.2rem
+
+        &.main-banner &__title
+            width: 80%
+
+            span
+                font-size: 3.3rem
+            strong
+                font-size: 4.2rem
+            span:last-of-type
+                font-size: 1.8rem
+
+        &__date-box span
+            font-size: 2.5rem
+
+        &__link
+            width: 23.4rem
+            height: 5.2rem
+
+        .swiper-pagination
+            bottom: 10px
+
+    .news__item-text
+        padding: 3.5rem 3.5rem 2.5rem 3.5rem
+
+    .header__support
+        display: none
+
+    .logo 
+        height: auto
+        width: 74%
+        position: absolute
+        right: 0
+
+        &__image
+            margin-right: 2.2rem
+
+    #menu
+        width: auto
+
+    .hamburger
+        padding: 0.5rem 1rem
+
+    .page-banner
+        .banner
+            &__text
+                flex-direction: column
+
+                p
+                    padding-bottom: 1.5rem
+
+    .event
+        &__list
+            &-item, &-item:nth-child(even)
+                flex-direction: column-reverse
+
+        &__item
+            &-text
+                width: 100%
+                margin-bottom: 3rem
+
+        &__main
+            display: flex
+            flex-direction: column-reverse
+
+            &-text
+                margin-bottom: 5rem
+                text-align: left
+
+        &-list
+            .news__item .banner__link
+                font-size: 1rem
+
+    .about
+        &-team
+            &__image
+                height: 50vh
+
+        .section-title
+            padding: 0 1.7rem
+
+        .about-info__subtitle
+            padding-left: 1.7rem
+            padding-right: 1.7rem
+
+    .gallery__slider
+        padding: 0
+
+    .members
+        &__list
+            grid-template-columns: 1fr 1fr
+            padding-bottom: 10vh
+
+        .form
+            width: 100%
+
+        .gallery__inner
+            width: 90%
+            margin: 0 auto
+            padding: 4vh 0
+
+        .form-button
+            margin: 0 auto
+            font-size: 1.2rem
+
+    .news
+        .news__text-box
+            font-size: 1.6rem
+            line-height: 2.4rem
+
+        .news__item-title
+            font-size: 2.2rem
+            line-height: 2.8rem
+
+    .footer
+        &__container
+            padding: 0
+
+        &__logo
+            padding-left: 0
+
+        &__nav
+            display: none
+
+        &__item:last-child
+            flex-direction: column-reverse
+            align-items: flex-start
+            margin-top: 2rem
+
+        &__social
+            align-items: flex-start
+            margin-bottom: 1rem
+
+        &__contacts
+            text-align: left
+            margin-left: 1rem
+
+            &_phone::before
+                display: none
+
+        &__button
+            margin-left: 1rem
+
+        &__logo
+            width: 30%
+
+    .contacts
+        
+        &__info
+            width: 90%
+
+        .section-title
+            font-size: 3.6rem
+
+    .section-title
+        word-wrap: break-word
+
+@media screen and (max-width: 380px) 
+    .banner
+
+        &.main-banner &__title
+            span
+                font-size: 3rem
+            strong
+                font-size: 3.9rem
+            span:last-of-type
+                font-size: 1.6rem
+
+        &__date-box span
+            font-size: 2.2rem
+
+@media screen and (max-width: 330px)
+
+    .page-banner 
+        .banner__title
+            font-size: 3.2rem
+
+        .banner__slogan
+            font-size: 1.8rem
+
+    .members__virtues-item strong
+        font-size: 2.3rem
+        
+
+@media screen and (min-width: 320px) and (max-width: 740px)and (orientation: landscape)
+    .banner__image
+        height: 55rem
+
+    .container
+        max-width: 90%
+
+    .page-banner
+        .banner
+            &__title
+                font-size: 3.6rem
+
+            &__text
+                font-size: 2rem
+
+    .about-team__image
+        height: 40rem
