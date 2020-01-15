@@ -1952,6 +1952,7 @@ body {
   text-transform: uppercase;
   font-style: italic;
   color: #ffa200;
+  transition: 0.12s;
 }
 
 .logo__image {
@@ -2073,7 +2074,7 @@ body {
 }
 
 .banner__link:hover {
-  background-color: #dc1f2b;
+  box-shadow: 0 0 20px #ffffff;
   color: #000000;
   transition: 0.12s;
 }
@@ -2089,6 +2090,7 @@ body {
 }
 
 .swiper-container {
+  max-width: 1920px;
   padding-bottom: 4.5rem;
 }
 
@@ -2191,6 +2193,7 @@ body {
 
 .news__item {
   display: flex;
+  border-radius: 1rem;
 }
 
 .news__item-text {
@@ -2231,6 +2234,7 @@ body {
 
 .news__item-image img {
   border-radius: 0;
+  object-position: top;
   border-top-right-radius: 1rem;
   border-bottom-right-radius: 1rem;
 }
@@ -2241,6 +2245,12 @@ body {
   margin: 0;
   margin-top: 3rem;
   font-size: 1rem;
+  transition: 0.12s;
+}
+
+.news__item .banner__link:hover {
+  box-shadow: 0 0 10px #ffa200;
+  transition: 0.12s;
 }
 
 .news__text-box {
@@ -2411,6 +2421,30 @@ body {
 
 .event-list .news__list-item:not(:first-of-type) {
   margin-top: 4rem;
+}
+
+.event-list .news__list-item:nth-child(even) .news__item-image {
+  width: 66.5%;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+
+.event-list .news__list-item:nth-child(even) .news__item-image img {
+  border-radius: 0;
+  object-position: top;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+
+.event-list .news__list-item:nth-child(even) .news__item-text {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
 }
 
 .gallery {
@@ -2586,7 +2620,7 @@ body {
 }
 
 .members__box-title {
-  font-size: 2.3rem;
+  font-size: 2.2rem;
   font-weight: 900;
   line-height: 2.7rem;
   text-transform: uppercase;
@@ -2605,6 +2639,7 @@ body {
 
 .members__inner {
   width: 82%;
+  max-width: 1737px;
   margin: 0 auto;
   padding-top: 5.6rem;
 }
@@ -2735,6 +2770,7 @@ body {
   width: 48%;
   height: 5.5rem;
   margin-right: 0;
+  font-size: 1.4rem;
 }
 
 .form-comment {
@@ -2743,6 +2779,11 @@ body {
 
 .form textarea.form-control {
   height: 11.3rem;
+}
+
+.form textarea.form-control::placeholder {
+  line-height: 10rem;
+  text-indent: 1;
 }
 
 .form-file {
@@ -2965,6 +3006,7 @@ body {
   text-align: center;
   background-color: #dc1f2b;
   color: #000000;
+  transition: 0.12s;
 }
 
 .footer__logo .logo__image {
@@ -3044,9 +3086,9 @@ body {
 .footer__contacts_phone::before {
   content: '';
   display: inline-block;
-  width: 2rem;
-  height: 2rem;
-  background-image: url(../../icons/phone.svg);
+  width: 1.5rem;
+  height: 1.5rem;
+  background: url("../../icons/sprite.svg#svgView(viewBox(0, 0, 32, 32))");
   background-repeat: no-repeat;
   background-size: contain;
   margin-right: 1rem;
@@ -3067,6 +3109,13 @@ body {
 
 .footer__button {
   text-transform: uppercase;
+  transition: 0.08s;
+}
+
+.footer__button:hover {
+  box-shadow: 0 0 10px #ffffff;
+  color: #000000;
+  transition: 0.08s;
 }
 
 .footer__links {
@@ -3134,6 +3183,14 @@ body {
   padding-bottom: 1rem;
 }
 
+@media screen and (min-width: 990px) {
+  .menu {
+    position: sticky;
+    top: 0;
+    z-index: 900;
+  }
+}
+
 @media screen and (min-width: 1100px) {
   .event-list .news__text-box {
     position: relative;
@@ -3188,6 +3245,15 @@ body {
   .about-team__image {
     height: 100%;
   }
+  .footer__logo:hover, #logo:hover {
+    transition: 0.12s;
+  }
+  .footer__logo:hover {
+    color: orange;
+  }
+  #logo:hover {
+    color: #dc1f2b;
+  }
 }
 
 @media screen and (min-width: 1530px) {
@@ -3211,6 +3277,13 @@ body {
   }
   .event-list .news__text-box {
     max-height: 67%;
+  }
+}
+
+@media screen and (min-width: 1930px) {
+  .gallery__item {
+    width: 94%;
+    margin: 0 auto;
   }
 }
 
@@ -3330,12 +3403,16 @@ body {
   }
   .news__item-image img, .news .event-list .news__list-item:nth-child(2n) .news__item-image img {
     border-top-right-radius: 0;
+    border-bottom-left-radius: 1rem;
   }
   .news__item-date, .news .event-list .news__list-item:nth-child(2n) .news__item-date {
     font-size: 1.2rem;
   }
   .news__text-box {
     font-size: 1.6rem;
+  }
+  .news .news__list-item:nth-of-type(even) .news__item-image {
+    width: 100%;
   }
   .gallery__inner {
     width: 100%;
@@ -3360,6 +3437,7 @@ body {
     text-align: center;
   }
   .about .gallery__inner {
+    padding-top: 0;
     padding-bottom: 5%;
     padding-right: 6.65%;
     width: 100%;
@@ -3402,12 +3480,18 @@ body {
   .members .members__list {
     width: 100%;
   }
+  .members__box {
+    padding-bottom: 5.5rem;
+  }
   .contacts {
     padding-top: 11rem;
   }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 990px) {
+  .header .container {
+    max-width: 100%;
+  }
   .menu {
     display: none;
   }
@@ -3431,10 +3515,18 @@ body {
     width: 45%;
   }
   #menu {
+    justify-content: flex-end;
+    text-align: right;
     width: 25%;
   }
   .banner {
     margin-top: 7.5rem;
+  }
+  .banner__text {
+    flex-direction: column;
+  }
+  .banner__text p {
+    padding-bottom: 0.5rem;
   }
   .page-banner .banner__title, .page-banner .banner__slogan {
     width: 80%;
@@ -3448,8 +3540,18 @@ body {
   .event-list {
     margin-top: 0;
   }
+  .members__box-title {
+    padding: 0 2rem;
+  }
+  .members__list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .members .form {
+    width: 80%;
+  }
   .footer__container {
     max-width: 100%;
+    padding: 0;
   }
   .footer__inner {
     padding: 2rem;
@@ -3469,6 +3571,9 @@ body {
   .contacts__info {
     width: 60%;
   }
+  .about-team__image {
+    min-height: 40rem;
+  }
 }
 
 @media screen and (max-width: 700px) {
@@ -3481,9 +3586,31 @@ body {
   .page-banner .banner__text {
     font-size: 2rem;
   }
+  .members__list {
+    grid-template-columns: 1fr 1fr;
+    padding-bottom: 10vh;
+  }
+  .members__inner {
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 500px) and (max-width: 630px) {
+  .footer__logo {
+    width: 16.3%;
+  }
+  .footer__contacts, .footer__nav {
+    width: 50%;
+  }
 }
 
 @media screen and (max-width: 500px) {
+  .header .container {
+    justify-content: flex-end;
+  }
+  #header .navbar-nav .nav-item.active .nav-link {
+    color: #dc1f2b;
+  }
   .banner {
     margin-top: 5.5rem;
   }
@@ -3502,11 +3629,14 @@ body {
   .banner.main-banner .banner__title span:last-of-type {
     font-size: 1.8rem;
   }
+  .banner__date-box {
+    width: 100%;
+  }
   .banner__date-box span {
     font-size: 2.5rem;
   }
   .banner__link {
-    width: 23.4rem;
+    width: 100%;
     height: 5.2rem;
   }
   .banner .swiper-pagination {
@@ -3520,9 +3650,9 @@ body {
   }
   .logo {
     height: auto;
-    width: 74%;
+    width: 71%;
     position: absolute;
-    right: 0;
+    left: 10%;
   }
   .logo__image {
     margin-right: 2.2rem;
@@ -3541,10 +3671,15 @@ body {
   }
   .event__list-item, .event__list-item:nth-child(even) {
     flex-direction: column-reverse;
+    margin-left: 0;
+    margin-right: 0;
   }
   .event__item-text {
     width: 100%;
     margin-bottom: 3rem;
+  }
+  .event__item-image {
+    width: 100%;
   }
   .event__main {
     display: flex;
@@ -3556,6 +3691,17 @@ body {
   }
   .event-list .news__item .banner__link {
     font-size: 1rem;
+  }
+  .event__main-text {
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: -2.1rem;
+  }
+  .event__list-item:nth-child(even) .event__item-text, .event__item-text {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: -1.1rem;
   }
   .about-team__image {
     height: 50vh;
@@ -3570,10 +3716,6 @@ body {
   .gallery__slider {
     padding: 0;
   }
-  .members__list {
-    grid-template-columns: 1fr 1fr;
-    padding-bottom: 10vh;
-  }
   .members .form {
     width: 100%;
   }
@@ -3583,6 +3725,7 @@ body {
     padding: 4vh 0;
   }
   .members .form-button {
+    width: 100%;
     margin: 0 auto;
     font-size: 1.2rem;
   }
@@ -3593,6 +3736,10 @@ body {
   .news .news__item-title {
     font-size: 2.2rem;
     line-height: 2.8rem;
+  }
+  .news .news__item .banner__link {
+    width: 100%;
+    padding: 2rem 0;
   }
   .footer__container {
     padding: 0;
@@ -3625,6 +3772,9 @@ body {
   .footer__logo {
     width: 30%;
   }
+  .footer .header__support-image {
+    height: 7rem;
+  }
   .contacts__info {
     width: 90%;
   }
@@ -3648,6 +3798,16 @@ body {
   }
   .banner__date-box span {
     font-size: 2.2rem;
+  }
+  .banner .logo {
+    left: 12%;
+  }
+  .contacts__links {
+    flex-direction: column;
+    align-items: center;
+  }
+  .contacts__links a:not(:last-of-type) {
+    margin-bottom: 1rem;
   }
 }
 

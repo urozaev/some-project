@@ -55,6 +55,7 @@ body
     text-transform: uppercase
     font-style: italic
     color: $orange
+    transition: 0.12s
 
     &__image
         width: 6rem
@@ -159,7 +160,7 @@ body
         transition: 0.12s
 
         &:hover
-            background-color: $red
+            box-shadow: 0 0 20px $white
             color: $black
             transition: 0.12s
 
@@ -174,6 +175,7 @@ body
         background-repeat: no-repeat
 
 .swiper-container
+    max-width: 1920px
     padding-bottom: 4.5rem
     
     .swiper-button-next::after, .swiper-container-rtl .swiper-button-prev::after,
@@ -255,9 +257,11 @@ body
             &:hover .news__item
                 box-shadow: 0 0 50px rgba(220,31,43,.9)
                 transition: 0.12s
+                
         
     &__item
         display: flex
+        border-radius: 1rem
 
         &-text
             width: 38.5%
@@ -292,6 +296,7 @@ body
 
             img
                 border-radius: 0
+                object-position: top
                 border-top-right-radius: 1rem
                 border-bottom-right-radius: 1rem
 
@@ -301,6 +306,11 @@ body
             margin: 0
             margin-top: 3rem
             font-size: 1rem
+            transition: 0.12s
+
+            &:hover
+                box-shadow: 0 0 10px $orange
+                transition: 0.12s
 
 
     &__text-box
@@ -368,6 +378,8 @@ body
                     padding-right: 5.5%
                     padding-left: 3rem
                     margin-left: 0
+
+
     &__item
         &-image
             width: 58.4rem
@@ -445,6 +457,29 @@ body
 
         .news__list-item:not(:first-of-type)
             margin-top: 4rem
+
+        .news__list-item:nth-child(even)
+
+            .news__item-image
+                width: 66.5%
+                border-top-right-radius: 0
+                border-bottom-right-radius: 0
+                border-top-left-radius: 1rem
+                border-bottom-left-radius: 1rem
+
+                img
+                    border-radius: 0
+                    object-position: top
+                    border-top-right-radius: 0
+                    border-bottom-right-radius: 0
+                    border-top-left-radius: 1rem
+                    border-bottom-left-radius: 1rem
+
+            .news__item-text
+                border-top-left-radius: 0
+                border-bottom-left-radius: 0
+                border-top-right-radius: 1rem
+                border-bottom-right-radius: 1rem
 
 .gallery
     padding-top: 8rem
@@ -594,7 +629,7 @@ body
         padding-top: 5.5rem
 
         &-title
-            font-size: 2.3rem
+            font-size: 2.2rem
             font-weight: 900
             line-height: 2.7rem
             text-transform: uppercase
@@ -610,6 +645,7 @@ body
 
     &__inner
         width: 82%
+        max-width: 1737px
         margin: 0 auto
         padding-top: 5.6rem
 
@@ -732,12 +768,17 @@ body
         width: 48%
         height: 5.5rem
         margin-right: 0
+        font-size: 1.4rem
 
     &-comment
         font-size: 1.3rem
 
     textarea.form-control
         height: 11.3rem
+
+        &::placeholder
+            line-height: 10rem
+            text-indent: 1
 
 
     &-file
@@ -931,6 +972,7 @@ body
         text-align: center
         background-color: $red
         color: $black
+        transition: 0.12s
 
         .logo__image
             height: 10.5rem
@@ -996,9 +1038,9 @@ body
             &::before
                 content: ''
                 display: inline-block
-                width: 2rem
-                height: 2rem
-                background-image: url(../../icons/phone.svg)
+                width: 1.5rem
+                height: 1.5rem
+                background: url("../../icons/sprite.svg#svgView(viewBox(0, 0, 32, 32))")
                 background-repeat: no-repeat
                 background-size: contain
                 margin-right: 1rem
@@ -1016,6 +1058,12 @@ body
 
     &__button
         text-transform: uppercase
+        transition: 0.08s
+
+        &:hover
+            box-shadow: 0 0 10px $white
+            color: $black
+            transition: 0.08s
             
     &__links
         width: 40%
@@ -1071,6 +1119,12 @@ body
         &.arrow::after
             height: 1.1rem
             padding-bottom: 1rem
+
+@media screen and (min-width: 990px)
+    .menu
+        position: sticky
+        top: 0
+        z-index: 900
 
 @media screen and (min-width: 1100px)
     .event-list
@@ -1130,13 +1184,21 @@ body
             &__image
                 height: 100%
 
+    .footer__logo:hover, #logo:hover
+        transition: 0.12s
+
+    .footer__logo:hover
+        color: orange
+
+    #logo:hover
+        color: $red
+
 @media screen and (min-width: 1530px) 
     .container 
         max-width: 1390px
 
     .main-banner .banner__image
         max-height: 62rem
-
 
 @media screen and (min-width: 1531px) 
     .container 
@@ -1150,6 +1212,11 @@ body
         .news__text-box
             max-height: 67%
 
+@media screen and (min-width: 1930px)
+    .gallery__item
+        width: 94%
+        margin: 0 auto
+    
 @media screen and (max-width: 1530px) 
     html 
         font-size: 56.81%
@@ -1260,12 +1327,16 @@ body
                 
                 img
                     border-top-right-radius: 0
+                    border-bottom-left-radius: 1rem
 
             &-date
                 font-size: 1.2rem
 
         &__text-box
             font-size: 1.6rem
+
+        .news__list-item:nth-of-type(even) .news__item-image
+            width: 100%
 
     .gallery
         &__inner
@@ -1293,6 +1364,7 @@ body
     .about
         
         .gallery__inner
+            padding-top: 0
             padding-bottom: 5%
             padding-right: 6.65%
             width: 100%
@@ -1335,11 +1407,19 @@ body
 
         .members__list
             width: 100%
+        
+        &__box
+            padding-bottom: 5.5rem
 
     .contacts
         padding-top: 11rem
 
-@media screen and (max-width: 900px) 
+@media screen and (max-width: 990px)
+
+    .header
+        .container
+            max-width: 100%
+
     .menu
         display: none
 
@@ -1363,10 +1443,18 @@ body
         width: 45%
 
     #menu
+        justify-content: flex-end
+        text-align: right
         width: 25%
 
     .banner
         margin-top: 7.5rem
+
+        &__text
+            flex-direction: column
+
+            p
+                padding-bottom: 0.5rem
 
     .page-banner
         .banner
@@ -1383,9 +1471,21 @@ body
     .event-list
         margin-top: 0
 
+    .members
+        &__box
+            &-title
+                padding: 0 2rem
+
+        &__list
+            grid-template-columns: 1fr 1fr 1fr
+
+        .form
+            width: 80%
+
     .footer
         &__container
             max-width: 100%
+            padding: 0
 
         &__inner
             padding: 2rem
@@ -1405,6 +1505,9 @@ body
     .contacts__info
         width: 60%
 
+    .about-team__image
+        min-height: 40rem
+
 @media screen and (max-width: 700px) 
     html 
         font-size: 51%
@@ -1417,7 +1520,29 @@ body
             &__text
                 font-size: 2rem
 
+    .members
+        &__list
+            grid-template-columns: 1fr 1fr
+            padding-bottom: 10vh
+
+        &__inner
+            width: 90%
+
+@media screen and (min-width: 500px) and (max-width: 630px)
+    .footer__logo
+        width: 16.3%
+
+    .footer__contacts, .footer__nav
+        width: 50%
+
 @media screen and (max-width: 500px) 
+    .header 
+        .container
+            justify-content: flex-end
+
+    #header .navbar-nav .nav-item.active .nav-link
+        color: $red
+
     .banner
         margin-top: 5.5rem
 
@@ -1434,11 +1559,15 @@ body
             span:last-of-type
                 font-size: 1.8rem
 
-        &__date-box span
-            font-size: 2.5rem
+        &__date-box
+            width: 100%
+
+            span
+                font-size: 2.5rem
 
         &__link
-            width: 23.4rem
+            // width: 23.4rem
+            width: 100%
             height: 5.2rem
 
         .swiper-pagination
@@ -1452,9 +1581,9 @@ body
 
     .logo 
         height: auto
-        width: 74%
+        width: 71%
         position: absolute
-        right: 0
+        left: 10%
 
         &__image
             margin-right: 2.2rem
@@ -1477,11 +1606,16 @@ body
         &__list
             &-item, &-item:nth-child(even)
                 flex-direction: column-reverse
+                margin-left: 0
+                margin-right: 0
 
         &__item
             &-text
                 width: 100%
                 margin-bottom: 3rem
+
+            &-image
+                width: 100%
 
         &__main
             display: flex
@@ -1494,6 +1628,18 @@ body
         &-list
             .news__item .banner__link
                 font-size: 1rem
+
+        &__main
+            &-text
+                margin-top: 0
+                margin-left: 0
+                margin-right: 0
+                margin-bottom: -2.1rem
+
+    .event__list-item:nth-child(even) .event__item-text, .event__item-text
+        margin-left: 0
+        margin-right: 0
+        margin-bottom: -1.1rem
 
     .about
         &-team
@@ -1511,9 +1657,6 @@ body
         padding: 0
 
     .members
-        &__list
-            grid-template-columns: 1fr 1fr
-            padding-bottom: 10vh
 
         .form
             width: 100%
@@ -1524,6 +1667,7 @@ body
             padding: 4vh 0
 
         .form-button
+            width: 100%
             margin: 0 auto
             font-size: 1.2rem
 
@@ -1535,6 +1679,10 @@ body
         .news__item-title
             font-size: 2.2rem
             line-height: 2.8rem
+
+        .news__item .banner__link
+            width: 100%
+            padding: 2rem 0
 
     .footer
         &__container
@@ -1568,6 +1716,9 @@ body
         &__logo
             width: 30%
 
+        .header__support-image
+            height: 7rem
+
     .contacts
         
         &__info
@@ -1592,6 +1743,18 @@ body
 
         &__date-box span
             font-size: 2.2rem
+
+        .logo
+            left: 12%
+
+    .contacts
+        &__links
+            flex-direction: column
+            align-items: center
+
+            a:not(:last-of-type)
+                margin-bottom: 1rem
+
 
 @media screen and (max-width: 330px)
 

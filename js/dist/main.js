@@ -60,11 +60,12 @@ var swiper = new Swiper('.about-slider', {
   }
 
 // MEDIA
-if (window.matchMedia('(max-width: 900px)').matches) {  
-  let logo = document.getElementById('logo')
+if (window.matchMedia('(max-width: 990px)').matches) {  
+  // let logo = document.getElementById('logo')
+  let supLogo = document.getElementById('support-logo')
   let menu = document.getElementById('menu')
 
-  logo.before(menu)
+  supLogo.after(menu)
 }
 
 // Маска телефона
